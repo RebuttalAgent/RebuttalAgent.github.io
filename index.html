@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Dancing in Chains: Strategic Persuasion in Academic Rebuttal via Theory of Mind">
+  <meta name="keywords" content="RebuttalAgent">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dancing in Chains: Strategic Persuasion in Academic Rebuttal via Theory of Mind</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/MATP_icon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script type="module">
+    import { Client } from "https://cdn.skypack.dev/@gradio/client";
+    window.Client = Client;
+  </script>
+</head>
+<body>
+
+<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://hypernerf.github.io">
+            HyperNeRF
+          </a>
+          <a class="navbar-item" href="https://nerfies.github.io">
+            Nerfies
+          </a>
+          <a class="navbar-item" href="https://latentfusion.github.io">
+            LatentFusion
+          </a>
+          <a class="navbar-item" href="https://photoshape.github.io">
+            PhotoShape
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav> -->
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <!-- 添加图片 --> 
+          <img src="./static/images/rebuttalagent_icon.png" alt="Logo" style="max-width: 220px; margin-bottom: 30px;">
+          <h1 class="title is-1 publication-title">Dancing in Chains: Strategic Persuasion <br>in Academic Rebuttal<br> via Theory of Mind</h1>
+          <div class="is-size-5 publication-authors">
+              <a href="https://scholar.google.com/citations?user=ULvoYXgAAAAJ&hl=zh-CN">Zhitao He<span class="author-block"><sup>*</sup></a>,
+              
+            </span>
+              <a href="https://rebuttalagent.github.io/">Zongwei Lyu<span class="author-block"><sup>*</sup></a>,
+          
+            </span>
+            <a href="yrfung@ust.hk">
+              Yi R. (May) Fung<span class="author-block"><sup><i class="fas fa-envelope"></i></sup></span>
+            </a>
+            </span>
+            <!-- <span class="author-block">
+              <a href="https://aclanthology.org/people/j/jiachun-li/">Jiachun Li</a>,
+            </span> -->
+            <!-- <span class="author-block">
+              <a href="https://nlpr.ia.ac.cn/cip/yubochen/index.html">Yubo Chen</a>,
+            </span> -->
+            <!-- <span class="author-block">
+              <a href="https://nlpr.ia.ac.cn/cip/~liukang/index.html">Kang Liu</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://nlpr-web.ia.ac.cn/cip/english/~junzhao/index.html">Jun Zhao</a>
+            </span> -->
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">The Hong Kong University of Science and Technology</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="./static/RebuttalAgent.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2601.15715"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/Zhitao-He/RebuttalAgent"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://huggingface.co/RebuttalAgent"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      🤗
+                  </span>
+                  <span>Dataset</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teaser.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
+        free-viewpoint
+        portraits.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/steve.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/chair-tp.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/shiba.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/fullbody.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/blueshirt.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mask">
+          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/mask.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/coffee.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-toby">
+          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/toby2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Summary -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Although artificial intelligence (AI) has become deeply integrated into various stages of the research workflow and achieved remarkable advancements, 
+            academic rebuttal remains a significant and underexplored challenge. This is because rebuttal is a complex process of strategic communication under severe information asymmetry rather than a simple technical debate. 
+            Consequently, current approaches struggle as they largely imitate surface-level linguistics, missing the essential element of perspective-taking required for effective persuasion. In this paper, we introduce <span style="color: red;">RebuttalAgent</span>, 
+            the first framework to ground academic rebuttal in Theory of Mind (ToM), operationalized through a ToM-Strategy-Response (TSR) pipeline that models reviewer mental state, formulates persuasion strategy, and generates strategy-grounded response. 
+            To train our agent, we construct <span style="color: red;">RebuttalBench</span>, a large-scale dataset synthesized via a novel critique-and-refine approach. Our training process consists of two stages, beginning with a supervised fine-tuning phase to equip the agent with ToM-based analysis and strategic planning capabilities, 
+            followed by a reinforcement learning phase leveraging the self-reward mechanism for scalable self-improvement. For reliable and efficient automated evaluation, we further develop <span style="color: red;">Rebuttal-RM</span>, a specialized evaluator trained on over 100K samples of multi-source rebuttal data, which achieves scoring consistency with human preferences surpassing powerful judge GPT-4.1. 
+            Extensive experiments show RebuttalAgent significantly outperforms the base model by an average of 18.3% on automated metrics, while also outperforming advanced proprietary models across both automated and human evaluations.
+            <span style="color: blue;">Disclaimer: the generated rebuttal content is for reference only to inspire authors and assist in drafting. It is not intended to replace the author's own critical analysis and response.</span>
+            </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+  <!-- Paper image. -->
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-full-width">
+      <h2 class="title is-3">Overview of our RebuttalAgent framework.</h2>
+      <div class="box py-2" style="height: 100%; display: flex; align-items: center; justify-content: center;">
+        <div class="publication-image"> 
+        <img src="./static/images/method.png" alt="Description of the image">
+        <figcaption class="has-text-centered mt-2"> Figure 1. First, we extract each comment from raw reviews and retrieves their relevant context from the paper. Next, based on our TSR pipeline, we collect a tailored strategy and response for each comment, grounded in Theory of Mind. Finally, our RebuttalAgent is trained via Supervised Fine-Tuning, followed by Reinforcement Learning with a self-reward mechanism, enabling both scalability and self-improvement.  </figcaption>
+      </div>
+    </div>
+    </div>
+  </div>
+</br>
+</br>
+</br>
+  <!--/ Paper image. -->
+  <div class="columns is-centered">
+    <div class="column is-full-width">
+      <!-- <h3 class="title is-4">Memorization Quantification</h3> -->
+      <!-- <div class="content has-text-justified">
+        <p>
+          
+        </p>
+      </div> -->
+      <div class="column is-full-width">
+        <h3 class="title is-4">Task Formulation</h3>
+        <div class="content has-text-justified">
+          <p>
+            In this task, the goal is to generate a convincing response to specific reviewer feedback based on the paper's content. Formally, the input consists of:
+          </p>
+          
+          <ul>
+            <li><span style="color: purple; font-weight: bold;">Manuscript</span> (<em>M</em>): The original paper, serving as the evidentiary basis for the rebuttal.</li>
+            <li><span style="color: purple; font-weight: bold;">Review</span> (<em>R<sub>i</sub></em>): A set of critiques and queries from a specific reviewer.</li>
+            <li><span style="color: purple; font-weight: bold;">Target Comment</span> (<em>c<sub>target</sub></em>): An individual unit of feedback within <em>R<sub>i</sub></em> that necessitates a direct response.</li>
+          </ul>
+      
+          <p>
+            Given these inputs, a model <strong>G</strong> is tasked with generating a response <em>r<sub>target</sub></em>, formalized as:
+          </p>
+          
+          <div style="text-align: center; margin: 1.5em 0; font-family: 'Times New Roman', serif; font-size: 1.2em; line-height: 1.8;">
+            G(<em>M</em>, <em>R<sub>i</sub></em>, <em>c<sub>target</sub></em>) &rarr; <em>r<sub>target</sub></em>
+          </div>
+      
+          <p>
+            To be effective, the generated response must satisfy three key objectives:
+          </p>
+      
+          <p>
+            1. <span style="color: #2e7d32; font-weight: bold;">Convincingness</span>: The response must go beyond mere politeness to thoughtfully address concerns and strengthen the paper’s position. 
+            2. <span style="color: #1565c0; font-weight: bold;">Context-Awareness</span>: It must demonstrate a nuanced understanding of both explicit criticism and the reviewer's underlying assumptions or misunderstandings. 
+            3. <span style="color: #ef6c00; font-weight: bold;">Evidence-Grounding</span>: Every claim and counter-argument must be verifiably substantiated by the manuscript <em>M</em>.
+          </p>
+      
+          <p>
+            Crucially, achieving success lies in the <strong>delicate balance</strong> of these competing objectives.
+          </p>
+        </div>
+      </div>
+      <!-- <div class="publication-image">
+        <img src="./static/images/Mem.jpg" alt="Description of the image">
+      </div> -->
+
+      <br/>
+    </div>
+  </div>
+
+  <!-- Paper image. -->
+  <div class="column is-full-width">
+    <h3 class="title is-4">Data Preparation</h3>
+    
+    <h4 class="title is-5" style="color: #4a4a4a; margin-top: 1.5em;">Comment Extraction</h4>
+    <div class="content has-text-justified">
+      <p>
+        Raw reviews often contain a mix of substantive critiques and irrelevant content like greetings or summary restatements. Feeding this unfiltered text directly into a model adds noise and redundancy, which can reduce the accuracy of the generated rebuttal. To address these challenges and align with our task formulation of addressing a single <strong>Target Comment</strong> (<em>c<sub>target</sub></em>) at a time, we first process the raw review using an <span style="color: #d32f2f; font-weight: bold;">LLM-as-Extractor</span>. Specifically, the extractor decomposes the raw review into a list of original, unedited, critical statements. To validate the reliability, we conducted a manual verification on 100 randomly sampled reviews, achieving a <strong>98% accuracy</strong> in comment extraction.
+      
+      </p>
+      
+    </div>
+
+  
+    <h4 class="title is-5" style="color: #4a4a4a;">Context Retrieval</h4>
+    <div class="content has-text-justified">
+      <p>
+        A single reviewer comment typically targets a specific aspect of the manuscript, such as a formula or baseline comparison. However, using the full, information-dense manuscript as context is infeasible and sub-optimal.
+      </p>
+  
+      <p>
+        We implement a three-stage context retrieval pipeline to isolate the most relevant content:
+      </p>
+  
+      <div class="box" style="background-color: #fafafa; border: 1px solid #e0e0e0;">
+        <ol>
+          <li><strong>Segmentation</strong>: The manuscript (<em>M</em>) is segmented into discrete text chunks, typically corresponding to paragraphs.</li>
+          <li><strong>Encoding</strong>: We employ a pre-trained embedding model to encode both the <em>c<sub>target</sub></em> and each text chunk into high-dimensional vector representations.</li>
+          <li><strong>Ranking</strong>: Relevance is quantified by computing the <strong>Cosine Similarity</strong> between vectors. The top-<em>k</em> chunks with the highest scores are retrieved as context.</li>
+        </ol>
+      </div>
+  
+      <p>
+        As formalized in our pipeline, this ensures the model maintains a sharp focus on the specific evidentiary basis required to address each individual critique, preventing the "dilution of focus" often seen in long-context generation tasks.
+      </p>
+    </div>
+  </div>
+  <!--/ Paper image. -->
+  <hr style="background-color: #f0f0f0; height: 1px; margin: 2em 0;">
+  <div class="column is-full-width">
+    <h3 class="title is-4">ToM-Strategy-Response Framework</h3>
+    <div class="content has-text-justified">
+      <p>
+        <strong>Theory of Mind (ToM)</strong> is a core concept in cognitive science, referring to the ability to understand and reason about the differing beliefs, intentions, desires, and perspectives of others. Applying this concept to artificial intelligence has led to <strong>Machine Theory of Mind (MToM)</strong>, which is an AI system's capacity to infer and model the mental states of human or AI teammates to support collaboration.
+      </p>
+    </div>
+  
+    <h4 class="title is-5" style="color: #4a4a4a; margin-top: 1.5em;">Hierarchical Reviewer Profile Modeling</h4>
+    
+    <div style="text-align: center; margin: 2em 0;">
+      <img src="./static/images/ToM.png" alt="Hierarchical Reviewer Profile Modeling Diagram" style="max-width: 100%; height: auto; border-radius: 8px;">
+      <p style="font-style: italic; color: #666; margin-top: 0.5em;">Figure 2: The architecture of Hierarchical Reviewer Profile Modeling.</p>
+    </div>
+  
+    <div class="content has-text-justified">
+      <p>
+        To capture the underlying intent and stance of reviewers, we propose a hierarchical analysis structure. This structure consists of two levels: a <strong>Macro-level</strong> analysis to infer the overall intent, which guides the global strategy, and a <strong>Micro-level</strong> analysis to deconstruct comments for crafting targeted responses.
+      </p>
+    </div>
+  
+    <h4 class="title is-5" style="color: #4a4a4a; margin-top: 1.5em;">ToM-Driven Strategy Generation</h4>
+    <div class="content has-text-justified">
+      <p>
+        The generation of an explicit strategy serves as a crucial intermediate reasoning step, bridging the gap between understanding the reviewer (the profile) and formulating a response. This step translates the static diagnostic profile into a <span style="color: #d32f2f; font-weight: bold;">dynamic, actionable plan</span>. The primary benefit of this explicit decomposition is that it compels the LLM to first decide <strong>how</strong> to respond before writing <strong>what</strong> to respond, ensuring alignment with the reviewer's underlying intent.
+      
+      </p>
+    </div>
+  
+    <h4 class="title is-5" style="color: #4a4a4a; margin-top: 1.5em;">Strategy-Guided Refined Response Generation</h4>
+    <div class="content has-text-justified">
+      <p>
+        The final stage generates the definitive response (<em>r<sub>target</sub></em>) through an advanced guided synthesis process, informed by two complementary types of input:
+      </p>
+  
+      <ul>
+        <li>
+          <span style="color: #1976d2; font-weight: bold;">Strategic Inputs</span>: The ToM-based reviewer profile (<em>P</em>) and the tailored rebuttal strategy (<em>S</em>), which shape tone and argumentative flow.
+        </li>
+        <li>
+          <span style="color: #388e3c; font-weight: bold;">Contextual Inputs</span>: The retrieved relevant chunks (<em>C<sub>E</sub></em>) and the original response (<em>r<sub>orig</sub></em>). 
+          <em>Note: r<sub>orig</sub> is used as a blueprint for phrasing and structure during data synthesis.</em>
+        </li>
+      </ul>
+  
+      <p>Formally, our model <strong>G</strong> weaves these components together as follows:</p>
+  
+      <div style="text-align: center; margin: 2em 0; font-family: 'Times New Roman', serif; font-size: 1.25em; background-color: white; padding: 1.5em; border-radius: 8px;">
+        <em>r<sub>target</sub></em> = G(<em>R<sub>i</sub></em>, <em>c<sub>target</sub></em>, <em>P</em>, <em>S</em>, &bigoplus;<sub><em>p<sub>j</sub> &isin; C<sub>E</sub></em></sub> <em>p<sub>j</sub></em>, <em>r<sub>orig</sub></em>)
+      </div>
+  
+      <p>
+        This framework ensures that the final text is not merely reactive to a comment's surface-level query, but is <strong>strategically aligned</strong>, <strong>factually grounded</strong>, and <strong>coherently structured</strong>.
+      </p>
+    </div>
+  </div>
+  <hr style="background-color: #f0f0f0; height: 1px; margin: 2em 0;">
+
+  <div class="column is-full-width">
+    <h3 class="title is-4">RebuttalAgent Training</h3>
+    
+    <h4 class="title is-5" style="color: #4a4a4a; margin-top: 1.5em;">Instruction Tuning with ToM-Driven Reasoning</h4>
+    <div class="content has-text-justified">
+      <p>
+        We perform supervised fine-tuning (SFT) on <strong>Qwen3-8B</strong> using our <strong>RebuttalBench</strong>. The objective of this stage is to enable the model to learn the structured reasoning process inherent to the <strong>ToM-Strategy-Response</strong> framework. The diversity of the training data, sourced from varied reviews and synthesized by multiple powerful LLMs, enhances the agent's robustness and generalization across different reviewing styles.
+      </p>
+    </div>
+  
+    <h4 class="title is-5" style="color: #4a4a4a; margin-top: 1.5em;">Reinforcement Learning with Self-Reward</h4>
+    <div class="content has-text-justified">
+      <p>
+        Beyond fundamental reasoning, we employ Reinforcement Learning (RL) to further optimize the agent's outputs to be strategically superior and more convincing.
+      </p>
+  
+      <p><span style="color: #d32f2f; font-weight: bold;">Self-Reward Mechanism:</span></p>
+      <p>
+        To achieve scalable self-improvement without an external reward model, we leverage the intrinsic reasoning abilities of the SFT-tuned model <em>G<sub>SFT</sub></em> to evaluate its own outputs autonomously. The overall reward <strong>R(o)</strong> is a weighted sum of four critical dimensions:
+      </p>
+  
+      <div style="text-align: center; margin: 1.5em 0; font-family: 'Times New Roman', serif; font-size: 1.2em; background-color: white; padding: 1.2em; border-radius: 8px;">
+        R(o) = w<sub>1</sub>R<sub>format</sub>(o) + w<sub>2</sub>R<sub>think</sub>(o) + w<sub>3</sub>R<sub>resp</sub>(o) + w<sub>4</sub>R<sub>div</sub>(o)
+      </div>
+  
+      <div class="box" style="background-color: #fafafa;">
+        <ul>
+          <li><strong>Format Adherence (R<sub>format</sub>)</strong>: A binary reward checking for the correct presence of Analysis, Strategy, and Response tags.</li>
+          <li><strong>Reasoning Quality (R<sub>think</sub>)</strong>: Self-evaluated accuracy of the profiling and strategic soundness.</li>
+          <li><strong>Response Quality (R<sub>resp</sub>)</strong>: Self-evaluated persuasiveness, clarity, and evidence usage.</li>
+          <li><strong>Response Diversity (R<sub>div</sub>)</strong>: To prevent reward hacking, the model compares its response against negative templates to ensure semantic distinction and human-like variety.</li>
+        </ul>
+      </div>
+    <p>
+        We use the defined rewards to optimize our policy with the <strong>Group Relative Policy Optimization (GRPO)</strong> algorithm.
+      </p>
+    </div>
+  
+    <hr style="background-color: #f0f0f0; height: 1px; margin: 2em 0;">
+  
+    <h3 class="title is-4">Rebuttal-RM as Judge</h3>
+    <div class="content has-text-justified">
+      <p>
+        To conduct reliable and efficient evaluation, we develop <span style="color: #388e3c; font-weight: bold;">Rebuttal-RM</span>, a scoring model specifically trained to align with human preferences.
+      </p>
+  
+      <p><strong>Training Data Construction:</strong></p>
+      <p>
+        The reward model <em>G<sub>RM</sub></em> takes the retrieved relevant chunks (<em>C<sub>E</sub></em>), the review (<em>R<sub>i</sub></em>), the target comment (<em>c<sub>target</sub></em>), and a candidate response (<em>r<sub>target</sub></em>) as input to output multi-dimensional scores <strong>s</strong> and an explanation <strong>e</strong>:
+      </p>
+
+      <div style="text-align: center; margin: 2em 0; font-family: 'Times New Roman', serif; font-size: 1.25em; background-color: white; padding: 1.5em; border-radius: 8px;">
+        (<strong>s</strong>, <em>e</em>) = <em>G<sub>RM</sub></em> (&bigoplus;<sub><em>p<sub>j</sub> &isin; C<sub>E</sub></em></sub> <em>p<sub>j</sub></em>, <em>R<sub>i</sub></em>, <em>c<sub>target</sub></em>, <em>r<sub>response</sub></em>)
+      </div>
+  
+      <p>
+        This process ensures the evaluation is not just a numerical score but is backed by a verifiable explanation grounded in the manuscript context.
+      </p>
+    </div>
+  </div>
+
+  <hr style="background-color: #f0f0f0; height: 1px; margin: 2em 0;">
+
+  <div class="column is-full-width">
+    <h3 class="title is-4">Experiment</h3>
+  
+    <h4 class="title is-5" style="color: #4a4a4a; margin-top: 1.5em;">Evaluation of Rebuttal-RM</h4>
+    
+    <div style="text-align: center; margin: 2em 0;">
+      <img src="./static/images/rewardmodel.png" alt="Rebuttal-RM Consistency with Human Ratings" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+      <p style="font-style: italic; color: #666; margin-top: 0.5em;">Figure 3: The consistency scores between various models and human ratings across six statistical metrics.</p>
+    </div>
+  
+    <div class="content has-text-justified">
+      <p>
+        <span style="color: #388e3c; font-weight: bold;">Rebuttal-RM Aligns Better with Human Evaluators.</span> 
+        Rebuttal-RM outperforms all baselines in alignment with human judgments, achieving the highest average score (<strong>0.812</strong>) and leading in all individual metrics. Notably, it surpasses GPT-4.1 and DeepSeek-r1 by <strong>9.0%</strong> and <strong>15.2%</strong>, respectively.
+      </p>
+    </div>
+  
+    <h4 class="title is-5" style="color: #4a4a4a; margin-top: 1.5em;">Benchmarking RebuttalAgent</h4>
+    <div class="content has-text-justified">
+       
+      <p>
+        <strong>Metrics:</strong> Our primary metric is a holistic quality score on a scale of 0-10, where a higher score indicates a superior response, ranging from Wholly Ineffective (0) to Outstanding (9-10). This holistic score is supported by a breakdown into four key dimensions, each also rated on a 0-10 scale: Clarity (C) (logical flow and organization), Persuasiveness (P) (argument strength and evidence), and Constructiveness (Co) (commitment to improvement and actionable revisions), Attitude (A) (tone and professionalism). These criteria form the rubric for our Rebuttal-RM automated evaluation, enabling our Rebuttal-RM to provide not only an overall quality score but also interpretable diagnostics.</p>
+      
+  
+      <p><strong>Datasets:</strong></p>
+      <ul>
+        <li><strong>R2-test (In-domain)</strong>: 6,000 comments from the Re<sup>2</sup> dataset, spanning 24 conferences and 21 workshops (2017–2023).</li>
+        <li><strong>Rebuttal-test (Out-of-domain)</strong>: 2,000 comments manually collected from recent ICLR and NeurIPS (post-2023) to assess generalization.</li>
+      </ul>
+    </div>
+  
+    <h4 class="title is-5" style="color: #4a4a4a; margin-top: 1.5em;">Experimental Results</h4>
+    
+    <div style="text-align: center; margin: 2em 0;">
+      <img src="./static/images/results.png" alt="Performance Comparison on R2-test" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+      <p style="font-style: italic; color: #666; margin-top: 0.5em;">Figure 4: Performance comparison of RebuttalAgent with baseline models and ablation study results.</p>
+    </div>
+  
+    <div class="content has-text-justified">
+      <p>
+        <span style="color: #d32f2f; font-weight: bold;">RebuttalAgent Significantly Outperforms Baselines.</span> 
+        As shown in the results, our RebuttalAgent achieves the highest overall average score of <strong>9.42</strong>, substantially outperforming GPT-4.1 and o3. Compared to the Qwen3-8B baseline, the agent yields an average improvement of <strong>18.3%</strong>, with the most significant gains in Persuasiveness and Constructiveness (up to 34.6%).
+      </p>
+  
+      
+      <p>
+        <strong>Ablation Study:</strong> Our ablation study confirms the necessity of all design components. Performance significantly drops when removing <strong>ToM, Strategy, or Thinking</strong>, or when omitting core training stages like SFT and RL. Furthermore, applying our framework to <em>Llama-3.1-8B</em> and <em>Qwen3-4B</em> yields significant gains, proving our TSR pipeline is <strong>model-agnostic</strong>.
+      </p>
+  
+      <p>
+        <span style="color: #1976d2; font-weight: bold;">Effectiveness of ToM-Driven Reasoning:</span> 
+        Using our ToM analysis and Strategy as context for external models (Qwen3-8B, Llama3.1-8B) shows consistent performance gains. Notably, Qwen3-8B achieves a <strong>21.0% gain in Presentation</strong> when guided by the full T&S.
+      </p>
+      <div style="text-align: center; margin: 2em 0;">
+        <img src="./static/images/basemodel.png" alt="Effectiveness of ToM-Driven Reasoning" style="max-width: 80%; height: auto; border-radius: 8px;">
+        <p style="font-style: italic; color: #666; margin-top: 0.5em;">Figure 5: Performance of base models when augmented with our ToM analysis and Strategy.</p>
+      </div>
+    </div>
+  
+    <h4 class="title is-5" style="color: #4a4a4a; margin-top: 1.5em;">Human Evaluation</h4>
+  
+    <div class="content has-text-justified">
+      <p>
+        The human evaluation results decisively confirm the clear superiority of RebuttalAgent. Our model achieves the highest average score of <strong>9.57</strong>, establishing a significant lead over o3 and GPT-4.1. The largest relative gain is in <strong>Persuasiveness (9.34)</strong>, a <strong>7.36%</strong> improvement over the GPT-4.1 baseline.
+      </p>
+    </div>
+    <div style="text-align: center; margin: 2em 0;">
+      
+      <img src="./static/images/human.png" alt="Human Evaluation Results" style="max-width: 100%; height: auto; border-radius: 8px; margin-top: 10px;">
+      <p style="font-style: italic; color: #666; margin-top: 0.5em;">Figure 6: Human evaluation results based on four metrics.</p>
+    </div>
+
+    <h4 class="title is-5" style="color: #4a4a4a; margin-top: 1.5em;">Conclusion</h4>
+    <div class="content has-text-justified">
+      <p>
+        In this paper, we introduce RebuttalAgent, the first framework to ground academic rebuttal in Theory of Mind (ToM). To train our agent, we construct RebuttalBench, a large-scale synthetic dataset created via a novel critique-and-refine pipeline. Our twofold training process begins with a Supervised Fine-tuning phase to equip the agent with ToM-based analysis and strategic planning capabilities, followed by a Reinforcement Learning phase using a novel self-reward mechanism. For a reliable and scalable automated evaluation, we develop Rebuttal-RM, a specialized evaluator trained on over 100K samples of multi-source data. Extensive experiments show RebuttalAgent significantly outperforms the base model by 18.3% and is competitive with advanced models such as o3 across both automated and human evaluations.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">MATP-BENCH Features</h2>
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h3 class="title is-4">Multimodal Context and Multi-language Theorem</h3>
+        <div class="content has-text-justified">
+          <p>
+            As shown in the lower part of Figure 1, each theorem consists of an image and a corresponding natural language description, which complement each other to form a complete statement. MATP-BENCH provides formalizations of these multimodal theorems in Lean 4, Isabelle, and Coq. To the best of our knowledge, MATP-BENCH is the first multimodal automated theorem proving benchmark covering all three of these languages.
+          </p>
+        </div>
+        <h3 class="title is-4">Hierarchy and Diversity</h3>
+        <div class="content has-text-justified">
+          <p>
+            The problems in MATP-BENCH span three distinct educational stages—high school, university, and competitions—systematically covering a wide range of difficulty levels from elementary to advanced. Specifically, the high school and university problems are collected from publicly available multimodal math problem datasets, while the competition problems are sourced from public Mathematical Olympiad examinations. Moreover, the multimodal theorems in MATP-BENCH are primarily centered around the domain of geometry, spanning plane geometry, 3D geometry, analytic geometry.
+          </p>
+        </div>
+      </div>
+      <div class="column is-full-width">
+        <h3 class="title is-4">Task Formulation</h3>
+        <div class="content has-text-justified">
+          <p>
+            We aim to achieve end-to-end multimodal automated theorem proving (Task 1), where the input is a natural language theorem and an image, and the output is a formal theorem and its proof, i.e. <span style="font-family: 'Times New Roman', serif;">Prover<sub>MATP</sub>(<em>I</em>, <em>S</em>) → (<em>T</em>, <em>P</em>)</span>. Furthermore, to prevent the model from generating formal theorems that do not align with original problems, we separately set up multimodal theorem formalization (Task 2) for verification, which aligns with LeanEuclid. Thus, we divide the task into two progressively challenging sub-tasks:
+          </p>
+          
+          <ul style="margin-left: 1.5em;">
+            <li style="margin-bottom: 0.5em;">
+              <strong>Task 1: Multimodal Automated Theorem Proving</strong>:<br>
+              This task aims to achieve end-to-end multimodal automated theorem proving similar to human provers, by directly generating a formalized theorem <em>T</em> and its proof <em>P</em> from multimodal informal input, i.e. <span style="font-family: 'Times New Roman', serif;">Prover<sub>Task1</sub>(<em>I</em>, <em>S</em>) → (<em>T</em>, <em>P</em>)</span>.
+            </li>
+            <li>
+              <strong>Task 2: Multimodal Theorem Formalization</strong>:<br>
+              The prover receives the multimodal question, and is required to formalize it into a precise theorem <em>T</em>, formally denoted as <span style="font-family: 'Times New Roman', serif;">Prover<sub>Task2</sub>(<em>I</em>, <em>S</em>) → <em>T</em></span>. This task evaluates the model's ability to correctly understand and formalize information from both textual and visual modalities.
+            </li>
+          </ul>
+        </div>
+      </div>
+  </div>
+</section> -->
+
+
+
+<!-- <div class="columns is-centered has-text-centered">
+  <iframe src="" frameborder="0" width="75%" height="800"></iframe>
+</div>
+ -->
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{he2026dancingchainsstrategicpersuasion,
+      title={Dancing in Chains: Strategic Persuasion in Academic Rebuttal via Theory of Mind}, 
+      author={Zhitao He and Zongwei Lyu and Yi R Fung},
+      year={2026},
+      eprint={2601.15715},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2601.15715}, 
+}
+      <!--       eprint={2402.18154}, -->
+
+</b></code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <!-- <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a> -->
+      <a class="icon-link" href="https://github.com/Zhitao-He/RebuttalAgent" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
